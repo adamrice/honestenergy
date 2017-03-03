@@ -21,10 +21,10 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "f+q68vyu5v&+3xa7hp(rofhzv4k3io9-s@*=u1f#=xl-x!p+#&"
+SECRET_KEY = "f+q68vyu5v&+3xa7hp(rofhzv4k3io9-s@*=u1f#=xl-x!p+#&" # TODO(Env var): Add SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False if os.environ.get('VENV') == 'production' else True
+DEBUG = False if os.environ.get('VENV') == 'production' else True # TODO(Env var): Include VENV
 
 # Application definition
 
@@ -59,10 +59,14 @@ ROOT_URLCONF = 'honestenergy.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            'compengine/templates',
+            'home/templates',
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'honestenergy.contrib.custom_context_processors.keychain', # NOTE(Debug): May have to import from honestenergy 2x up front
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -113,7 +117,12 @@ USE_TZ = True
 if not DEBUG:
     # Update database configuration with $DATABASE_URL.
     db_from_env = dj_database_url.config(conn_max_age=500)
-    DATABASES['default'].update(db_from_env)
+    DATABASES['default'].update(db_from_env) # TODO(Env Var): Add DATABASE_URL
+
+    GOOGLE_ANALYTICS_ID = os.environ.get('GOOGLE_ANALYTICS_ID') # TODO(Env Var): Include GOOGLE_ANALYTICS_ID
+
+else:
+    GOOGLE_ANALYTICS_ID = 'UA-XXXXX-X'
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

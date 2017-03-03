@@ -55,7 +55,7 @@ coverage.xml
 *.log
 local_settings.py
 staticfiles
-.sqlite3
+*.sqlite3
 
 # Flask stuff:
 instance/
@@ -99,3 +99,6 @@ honest-app35/
 
 # OS specific
 .DS_Store
+.sass-cache
+.sass-cache/*
+*.sass-cache

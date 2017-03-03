@@ -40,6 +40,7 @@ class Offers(models.Model):
         offers_by_zip = cls.objects.filter(
             zipcode__exact=zipcode,
             active__exact=True,
-            green__exact=True)
+            green__exact=True
+        )
 
         return offers_by_zip

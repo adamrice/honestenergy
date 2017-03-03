@@ -1,0 +1,54 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+<!-- Wrapper -->
+  <div id="wrapper">
+
+    {% if offers %}
+      {% for offer in offers %}
+        <!-- One -->
+          <section id="one" class="main">
+            <div class="inner spotlight style1">
+              <div class="content">
+                <header>
+                  <h2>{{ offer.esco }}</h2>
+                </header>
+                <p>{{ offer.utility_name }}</p>
+                <p>{{ offer.offer_type }}</p>
+              </div>
+              <!--
+                Note: You can replace the image below with a JPEG or PNG. Just make sure it's exactly
+                320x340 or at least the same aspect ratio (16:17).
+              -->
+              <span class="image">
+                <p><strong>Estimated monthly cost:
+                  {{ '${}'.format(
+                      round(offer.rate_kwh * 901, 2) }}</strong></p>
+                <p>{{ offer.minimum_term }}</p>
+                {% if offer.has_cancellation_fee %}
+                  <p>Cancellation Fee: Yes</p>
+                {% else %}
+                  <p>Cancellation Fee: No</p>
+                {% endif %}
+              </span>
+            </div>
+          </section>
+        {% endfor %}
+    {% else %}
+      <h2>You can still reduce your footprint!</h2>
+      <p>
+        Unfortunately, there are no clean energy providers in your area. But
+         don't worry, you can still reduce your footprint in a few ways:
+      </p>
+      <ul>
+        <li>
+          Way 1
+        </li>
+        <li>
+          Way 2
+        </li>
+      </ul>
+    {% endif %}
+
+  </div>
+{% endblock %}
