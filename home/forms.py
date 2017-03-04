@@ -8,7 +8,7 @@ class ZipcodeSearch(forms.Form):
     that match the user's zipcode.
     """
 
-    zipcode = forms.IntegerField(
+    zipcode = forms.CharField(
         widget=forms.TextInput(
             attrs={
                 'id':'name',

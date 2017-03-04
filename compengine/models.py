@@ -29,6 +29,8 @@ class Offers(models.Model):
     minimum_term = models.CharField(max_length=256)
     has_cancellation_fee = models.BooleanField()
     cancellation_fee = models.FloatField(null=True) # in $
+    renewable_score = models.CharField(max_length=64)
+    url = models.CharField(max_length=512)
     dt_created = models.DateTimeField()
     dt_updated = models.DateTimeField(default=timezone.now)
 
@@ -44,3 +46,22 @@ class Offers(models.Model):
         )
 
         return offers_by_zip
+
+
+class PotentialCustomers(models.Model):
+    """
+    The model to capture zipcodes and emails for users who are not able to
+    switch energy providers.
+    """
+    zipcode = models.CharField(max_length=24)
+    email = models.EmailField()
+
+    @classmethod
+    def add_potential_customer(cls, email, zipcode):
+        """
+        Uses the django ORM to add a potential customer to the database.
+        """
+        new_potential_customer = cls.objects.create(
+            email=email,
+            zipcode=zipcode
+        )
