@@ -121,8 +121,19 @@ if not DEBUG:
 
     GOOGLE_ANALYTICS_ID = os.environ.get('GOOGLE_ANALYTICS_ID') # TODO(Env Var): Include GOOGLE_ANALYTICS_ID
 
+    MAILCHIMP_USERNAME = os.environ.get('MAILCHIMP_USERNAME') # TODO(Env Var): Include MAILCHIMP_USERNAME
+    MAILCHIMP_SECRET_KEY = os.environ.get('MAILCHIMP_SECRET_KEY') # TODO(Env Var): Include MAILCHIMP_SECRET_KEY
+    MAILCHIMP_LISTS = {
+        'Leads': 'c3fa5fc97b',
+    }
+
 else:
     GOOGLE_ANALYTICS_ID = 'UA-XXXXX-X'
+    MAILCHIMP_USERNAME = 'XXXXXXXXX'
+    MAILCHIMP_SECRET_KEY = 'XXXXXXXXX'
+    MAILCHIMP_LISTS = {
+        'Leads': 'XXXXXXXXX',
+    }
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

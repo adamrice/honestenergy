@@ -1973,6 +1973,137 @@ dl {
 ul.alt li {
   border-top-color: #eaeaea; }
 
+/* Pricing List */
+.pricing-table {
+  padding-top: 50px; }
+  .pricing-table .pricing {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", Helvetica, sans-serif; }
+    .pricing-table .pricing .pricing-table-inner {
+      padding-bottom: 30px;
+      display: inline-block; }
+      .pricing-table .pricing .pricing-table-inner .pricing-header {
+        position: relative;
+        background: #7bd2ed;
+        padding: 22px 22px;
+        text-align: center;
+        border-top-right-radius: 4px;
+        border-top-left-radius: 4px; }
+        .pricing-table .pricing .pricing-table-inner .pricing-header .pricing-title {
+          color: #ffffff;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          font-size: 24px;
+          text-align: center;
+          font-weight: 500; }
+        .pricing-table .pricing .pricing-table-inner .pricing-header .pricing-rate {
+          font-size: 70px;
+          font-weight: 500;
+          color: #ffffff;
+          position: relative;
+          text-align: center; }
+          .pricing-table .pricing .pricing-table-inner .pricing-header .pricing-rate .pricing-tooltip {
+            position: relative;
+            display: inline-block; }
+            .pricing-table .pricing .pricing-table-inner .pricing-header .pricing-rate .pricing-tooltip .tooltip-text {
+              visibility: hidden;
+              background-color: #ffffff;
+              color: #7bd2ed;
+              text-align: center;
+              padding: 5px;
+              border-radius: 6px;
+              border: solid 1px #eaeaea;
+              /* Position the tooltip text - on top */
+              position: absolute;
+              z-index: 1;
+              width: 100%;
+              bottom: 100%;
+              right: 0%; }
+              .pricing-table .pricing .pricing-table-inner .pricing-header .pricing-rate .pricing-tooltip .tooltip-text::after {
+                content: " ";
+                position: absolute;
+                top: 100%;
+                /* At the bottom of the tooltip */
+                left: 50%;
+                margin-left: -15px;
+                border-width: 15px;
+                border-style: solid;
+                border-color: #ffffff transparent transparent transparent; }
+            .pricing-table .pricing .pricing-table-inner .pricing-header .pricing-rate .pricing-tooltip:hover .tooltip-text {
+              visibility: visible; }
+            .pricing-table .pricing .pricing-table-inner .pricing-header .pricing-rate .pricing-tooltip span {
+              font-size: 16px;
+              color: #ffffff;
+              text-transform: none;
+              padding: 5px; }
+          .pricing-table .pricing .pricing-table-inner .pricing-header .pricing-rate p {
+            margin: 0; }
+          .pricing-table .pricing .pricing-table-inner .pricing-header .pricing-rate sup {
+            font-size: 24px;
+            position: relative;
+            top: -30px;
+            color: #ffffff; }
+          .pricing-table .pricing .pricing-table-inner .pricing-header .pricing-rate span {
+            font-size: 16px;
+            color: #ffffff;
+            text-transform: uppercase; }
+    .pricing-table .pricing .pricing-list {
+      padding: 20px 0 40px 0;
+      background: #ffffff;
+      border: 1px solid #eaeaea; }
+      .pricing-table .pricing .pricing-list ul {
+        padding: 0px;
+        display: table;
+        margin: 0px auto; }
+        .pricing-table .pricing .pricing-list ul li {
+          list-style: none;
+          border-bottom: 1px solid rgba(144, 144, 144, 0.075);
+          color: #7bd2ed;
+          font-size: 16px;
+          line-height: 42px; }
+          .pricing-table .pricing .pricing-list ul li .pricing-tooltip {
+            position: relative;
+            display: inline-block; }
+            .pricing-table .pricing .pricing-list ul li .pricing-tooltip .tooltip-text {
+              visibility: hidden;
+              background-color: #777777;
+              color: #ffffff;
+              text-align: center;
+              padding: 5px;
+              border-radius: 6px;
+              line-height: 20px;
+              /* Position the tooltip text - on top */
+              position: absolute;
+              z-index: 1;
+              width: 100%;
+              top: -20%;
+              left: 105%; }
+              .pricing-table .pricing .pricing-list ul li .pricing-tooltip .tooltip-text::after {
+                content: " ";
+                position: absolute;
+                top: 50%;
+                right: 100%;
+                /* To the left of the tooltip */
+                margin-top: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: transparent #777777 transparent transparent; }
+            .pricing-table .pricing .pricing-list ul li .pricing-tooltip:hover .tooltip-text {
+              visibility: visible; }
+            .pricing-table .pricing .pricing-list ul li .pricing-tooltip span {
+              font-size: 16px;
+              color: #ffffff;
+              text-transform: none;
+              padding: 5px; }
+          .pricing-table .pricing .pricing-list ul li i {
+            margin-right: 12px;
+            color: #7bd2ed; }
+          .pricing-table .pricing .pricing-list ul li span {
+            color: #7bd2ed; }
+        .pricing-table .pricing .pricing-list ul li:last-child {
+          border: none; }
+
 /* Section/Article */
 section.special, article.special {
   text-align: center; }

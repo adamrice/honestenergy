@@ -184,3 +184,201 @@
   }
 
   @include color-list;
+
+/* Pricing List */
+
+  .pricing-table {
+    padding-top: 50px;
+
+    .pricing {
+      margin: 0;
+      padding: 0;
+      font-family: _font(family);
+
+      .pricing-table-inner {
+        padding-bottom: 30px;
+        display: inline-block;
+
+        .pricing-header {
+          position:relative;
+          background: _palette(accent1, bg);
+          padding: 22px 22px;
+          text-align: center;
+          border-top-right-radius: 4px;
+          border-top-left-radius: 4px;
+
+          .pricing-title {
+            color: _palette(bg);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 24px;
+            text-align: center;
+            font-weight: _font(weight-bold);
+          }
+
+          .pricing-rate {
+            font-size: 70px;
+            font-weight: _font(weight-bold);
+            color: _palette(bg);
+            position: relative;
+            text-align: center;
+
+            .pricing-tooltip {
+              position: relative;
+              display: inline-block;
+
+              .tooltip-text {
+                visibility: hidden;
+                background-color: _palette(bg);
+                color: _palette(accent1, bg);
+                text-align: center;
+                padding: 5px;
+                border-radius: 6px;
+                border: solid _size(border-width) _palette(border);
+
+                /* Position the tooltip text - on top */
+                position: absolute;
+                z-index: 1;
+                width: 100%;
+                bottom: 100%;
+                right: 0%;
+
+                &::after {
+                  content: " ";
+                  position: absolute;
+                  top: 100%; /* At the bottom of the tooltip */
+                  left: 50%;
+                  margin-left: -15px;
+                  border-width: 15px;
+                  border-style: solid;
+                  border-color: _palette(accent1, border) transparent transparent transparent;                }
+              }
+
+              &:hover {
+                .tooltip-text {
+                  visibility: visible;
+                }
+              }
+
+              span {
+                font-size: 16px;
+                color: _palette(bg);
+                text-transform: none;
+                padding: 5px;
+              }
+            }
+
+            p {
+              margin: 0;
+            }
+
+            sup {
+              font-size: 24px;
+              position: relative;
+              top: -30px;
+              color: _palette(bg);
+            }
+
+            span {
+              font-size: 16px;
+              color: _palette(bg);
+              text-transform: uppercase;
+            }
+          }
+        }
+      }
+
+      .pricing-list {
+        padding: 20px 0 40px 0;
+        background: _palette(bg);
+        border: 1px solid _palette(border);
+
+        ul {
+          padding: 0px;
+          display: table;
+          margin: 0px auto;
+
+          li {
+            list-style: none;
+            border-bottom: 1px solid _palette(border-bg);
+            color: _palette(accent1, bg);
+            font-size: 16px;
+            line-height: 42px;
+
+            .pricing-tooltip {
+              position: relative;
+              display: inline-block;
+
+              .tooltip-text {
+                visibility: hidden;
+                background-color: _palette(fg-bold);
+                color: _palette(bg);
+                text-align: center;
+                padding: 5px;
+                border-radius: 6px;
+                line-height: 20px;
+
+                /* Position the tooltip text - on top */
+                position: absolute;
+                z-index: 1;
+                width: 100%;
+                top: -20%;
+                left: 105%;
+
+                &::after {
+                  content: " ";
+                  position: absolute;
+                  top: 50%;
+                  right: 100%; /* To the left of the tooltip */
+                  margin-top: -5px;
+                  border-width: 5px;
+                  border-style: solid;
+                  border-color: transparent _palette(fg-bold) transparent transparent;
+                }
+
+              }
+
+              &:hover {
+                .tooltip-text {
+                  visibility: visible;
+                }
+              }
+
+              span {
+                font-size: 16px;
+                color: _palette(bg);
+                text-transform: none;
+                padding: 5px;
+
+                // a {
+                //   color: _palette(bg);
+                //   text-decoration: none;
+                //   border-bottom: dotted 1px;
+                //
+                //   &:hover {
+                //     color: _palette(bg);
+                //     border-bottom-color: transparent;
+                //   }
+                // }
+              }
+            }
+
+
+            i {
+              margin-right: 12px;
+              color: _palette(accent1, bg);
+            }
+
+            span {
+              color: _palette(accent1, bg);
+            }
+          }
+
+          li:last-child {
+            border: none;
+          }
+        }
+
+      }
+    }
+  }
