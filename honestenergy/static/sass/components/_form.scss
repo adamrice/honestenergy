@@ -244,4 +244,10 @@
     vertical-align: middle;
   }
 
+  #email_entry {
+    margin: 0 0 12 0;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
   @include color-form;
