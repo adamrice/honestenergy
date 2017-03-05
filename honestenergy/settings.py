@@ -168,6 +168,13 @@ FIXTURE_DIRS = [
 # # As seen here: http://stackoverflow.com/questions/238081/how-do-you-log-server-errors-on-django-sites/6395837#6395837
 # # DEBUG must be set to false
 # DEBUG_LOGFILE = '/var/log/django/honestenergy.log'
+# SECRET_KEY = 'XXXXXXXXXXXXXX'
+# GOOGLE_ANALYTICS_ID = 'UA-XXXXX-X'
+# MAILCHIMP_USERNAME = 'XXXXXXXXX'
+# MAILCHIMP_SECRET_KEY = 'XXXXXXXXX'
+# MAILCHIMP_LISTS = {
+#     'Leads': 'XXXXXXXXX',
+# }
 # LOGGING = {
 #     'version': 1,
 #     'disable_existing_loggers': False,
