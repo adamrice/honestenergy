@@ -7,7 +7,7 @@
     @include vendor('align-items', 'center');
     @include vendor('display', 'flex');
     @include vendor('justify-content', 'center');
-    background-image: url('../../static/img/banner.jpg');
+    background-image: url('../../staticfiles/static/img/banner.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
