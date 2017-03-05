@@ -12,7 +12,7 @@ class Offers(models.Model):
     Utility is a utility company such as ConEd
     """
     # Offer location details
-    zipcode = models.IntegerField()
+    zipcode = models.CharField(max_length=24)
     load_zone = models.CharField(max_length=256)
 
     # Utility Details
