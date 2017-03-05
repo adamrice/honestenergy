@@ -5,7 +5,7 @@
 
     > * {
       @include padding($main-pad, 0);
-      border-bottom: solid 2px _palette(border);
+      border-bottom: solid 1px _palette(border);
       overflow: hidden;
 
       > .inner {

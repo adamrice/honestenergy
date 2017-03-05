@@ -7,7 +7,6 @@ class ZipcodeSearch(forms.Form):
     This input will eventually be used to search the database for offers
     that match the user's zipcode.
     """
-
     zipcode = forms.CharField(
         widget=forms.TextInput(
             attrs={

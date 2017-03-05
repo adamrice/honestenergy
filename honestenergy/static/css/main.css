@@ -1692,6 +1692,11 @@ input[type="radio"] + label:before {
   display: inline-block;
   vertical-align: middle; }
 
+#email_entry {
+  margin: 0 0 12 0;
+  display: inline-block;
+  vertical-align: middle; }
+
 label {
   color: #777777; }
 
@@ -2813,7 +2818,7 @@ body.is-menu-visible #menu {
 /* Wrapper */
 #wrapper > * {
   padding: 5em 0 3em 0 ;
-  border-bottom: solid 2px #eaeaea;
+  border-bottom: solid 1px #eaeaea;
   overflow: hidden; }
   #wrapper > * > .inner {
     margin: 0 auto;
