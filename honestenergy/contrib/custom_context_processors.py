@@ -1,4 +1,4 @@
-import os
+from django.conf import settings
 
 
 def keychain(request):
@@ -9,7 +9,7 @@ def keychain(request):
     the site access them dynamically.
     """
     context_additions = {
-        'GOOGLE_ANALYTICS_ID': os.environ.get('GOOGLE_ANALYTICS_ID'),
+        'GOOGLE_ANALYTICS_ID': settings.GOOGLE_ANALYTICS_ID,
     }
 
     return context_additions

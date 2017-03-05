@@ -162,3 +162,48 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 FIXTURE_DIRS = [
     '/compengine/fixtures/',
     ]
+
+
+# # Debug code to debug production server errors locally
+# # As seen here: http://stackoverflow.com/questions/238081/how-do-you-log-server-errors-on-django-sites/6395837#6395837
+# # DEBUG must be set to false
+# DEBUG_LOGFILE = '/var/log/django/honestenergy.log'
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'handlers': {
+#         # Include the default Django email handler for errors
+#         # This is what you'd get without configuring logging at all.
+#         'mail_admins': {
+#             'class': 'django.utils.log.AdminEmailHandler',
+#             'level': 'ERROR',
+#              # But the emails are plain text by default - HTML is nicer
+#             'include_html': True,
+#         },
+#         # Log to a text file that can be rotated by logrotate
+#         'logfile': {
+#             'class': 'logging.handlers.WatchedFileHandler',
+#             'filename': DEBUG_LOGFILE
+#         },
+#     },
+#     'loggers': {
+#         # Again, default Django configuration to email unhandled exceptions
+#         'django.request': {
+#             'handlers': ['mail_admins'],
+#             'level': 'ERROR',
+#             'propagate': True,
+#         },
+#         # Might as well log any errors anywhere else in Django
+#         'django': {
+#             'handlers': ['logfile'],
+#             'level': 'ERROR',
+#             'propagate': False,
+#         },
+#         # Your own app - this assumes all your logger names start with "honestenergy."
+#         'honestenergy': {
+#             'handlers': ['logfile'],
+#             'level': 'WARNING', # Or maybe INFO or DEBUG
+#             'propagate': False
+#         },
+#     },
+# }
