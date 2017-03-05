@@ -21,10 +21,10 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "f+q68vyu5v&+3xa7hp(rofhzv4k3io9-s@*=u1f#=xl-x!p+#&" # TODO(Env var): Add SECRET_KEY
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False if os.environ.get('VENV') == 'production' else True # TODO(Env var): Include VENV
+DEBUG = False if os.environ.get('VENV') == 'production' else True
 
 # Application definition
 
@@ -117,12 +117,12 @@ USE_TZ = True
 if not DEBUG:
     # Update database configuration with $DATABASE_URL.
     db_from_env = dj_database_url.config(conn_max_age=500)
-    DATABASES['default'].update(db_from_env) # TODO(Env Var): Add DATABASE_URL
+    DATABASES['default'].update(db_from_env)
 
-    GOOGLE_ANALYTICS_ID = os.environ.get('GOOGLE_ANALYTICS_ID') # TODO(Env Var): Include GOOGLE_ANALYTICS_ID
+    GOOGLE_ANALYTICS_ID = os.environ.get('GOOGLE_ANALYTICS_ID')
 
-    MAILCHIMP_USERNAME = os.environ.get('MAILCHIMP_USERNAME') # TODO(Env Var): Include MAILCHIMP_USERNAME
-    MAILCHIMP_SECRET_KEY = os.environ.get('MAILCHIMP_SECRET_KEY') # TODO(Env Var): Include MAILCHIMP_SECRET_KEY
+    MAILCHIMP_USERNAME = os.environ.get('MAILCHIMP_USERNAME')
+    MAILCHIMP_SECRET_KEY = os.environ.get('MAILCHIMP_SECRET_KEY')
     MAILCHIMP_LISTS = {
         'Leads': 'c3fa5fc97b',
     }
