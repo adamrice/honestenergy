@@ -119,13 +119,13 @@ if not DEBUG:
     db_from_env = dj_database_url.config(conn_max_age=500)
     DATABASES['default'].update(db_from_env)
 
-    GOOGLE_ANALYTICS_ID = os.environ.get('GOOGLE_ANALYTICS_ID')
-
-    MAILCHIMP_USERNAME = os.environ.get('MAILCHIMP_USERNAME')
-    MAILCHIMP_SECRET_KEY = os.environ.get('MAILCHIMP_SECRET_KEY')
-    MAILCHIMP_LISTS = {
-        'Leads': 'c3fa5fc97b',
-    }
+    # GOOGLE_ANALYTICS_ID = os.environ.get('GOOGLE_ANALYTICS_ID')
+    #
+    # MAILCHIMP_USERNAME = os.environ.get('MAILCHIMP_USERNAME')
+    # MAILCHIMP_SECRET_KEY = os.environ.get('MAILCHIMP_SECRET_KEY')
+    # MAILCHIMP_LISTS = {
+    #     'Leads': 'c3fa5fc97b',
+    # }
 
 else:
     GOOGLE_ANALYTICS_ID = 'UA-XXXXX-X'
