@@ -2596,7 +2596,7 @@ body.is-menu-visible #menu {
   -webkit-justify-content: center;
   -ms-justify-content: center;
   justify-content: center;
-  background-image: url("../../img/banner.jpg");
+  background-image: url("../../staticfiles/img/banner.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
