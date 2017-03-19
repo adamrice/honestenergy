@@ -33,9 +33,9 @@
                                         <div class="pricing-tooltip">
                                           <p><sup>$</sup> {% calculate_monthly_cost offer.rate_kwh %}<sup><i class="fa fa-question-circle-o"></i></sup>
                                             {% if offer.offer_type == "Variable" %}
-                                              <span>First Month</span></p>
+                                              <span>First Month (Est.)</span></p>
                                             {% else %}
-                                              <span>/Mo.</span></p>
+                                              <span>/Mo (Est.)</span></p>
                                             {% endif %}
                                           <span class="tooltip-text">
                                             Pricing is calculated using average US household energy consumption numbers. The actual offer rate is ${{ offer.rate_kwh }}/kwh. Pricing does not use any fees.
@@ -44,39 +44,39 @@
                                       </div>
                                       <ul class="actions vertical small">
                                         <li>
-                                          <a href="{{ offer.url }}" class="button special fit" style="cursor: pointer;">Make the switch</a>
+                                          <a href="{{ offer.url }}" class="button special fit cta" style="cursor: pointer;">Make the switch</a>
                                         </li>
                                       </ul>
                                   </div>
 
                                   <div class="pricing-list">
                                       <ul>
-                                          <li><i class="fa fa-calendar"></i><strong>Minimum Term:</strong>
-                                            {% if offer.offer_type == "Variable" %}
-                                              {{ offer.minimum_term }} <sup>*</sup>Price increases after first month.</li>
-                                            {% else %}
-                                              {{ offer.minimum_term }}
-                                            {% endif %}
-                                          <li>
-                                            <div class="pricing-tooltip">
-                                              <i class="fa fa-star"></i><strong>Renewable Score:</strong> {{ offer.renewable_score }} <sup><i class="fa fa-question-circle-o"></i></sup>
-                                              <span class="tooltip-text">
-                                                Our Renewable Score represents the offer's actual carbon footprint reduction. More information <a href="#">here</a> . <!-- TODO(Mike): Add in educational link -->
-                                              </span>
-                                            </div>
-                                          </li>
-                                          {% if not offer.has_cancellation_fee %}
-                                            <li><i class="fa fa-check"></i><strong>No</strong> Cancellation Fee</li>
+                                        <li>
+                                          <div class="pricing-tooltip">
+                                            <i class="fa fa-star"></i><strong>Renewable Score:</strong> {{ offer.renewable_score }} <sup><i class="fa fa-question-circle-o"></i></sup>
+                                            <span class="tooltip-text">
+                                              Renewable score represents our assessment of the carbon footprint reduction. More information <a href="#">here</a> . <!-- TODO(Mike): Add in educational link -->
+                                            </span>
+                                          </div>
+                                        </li>
+                                        <li><i class="fa fa-calendar"></i><strong>Contract Length:</strong>
+                                          {% if offer.offer_type == "Variable" %}
+                                            {{ offer.minimum_term }} <sup>*</sup>Price increases after first month.</li>
+                                          {% else %}
+                                            {{ offer.minimum_term }}
                                           {% endif %}
-                                          <li><i class="fa fa-bolt"></i><strong>Utility:</strong> {{ offer.utility_name }}</li>
-                                          <li>
-                                            <div class="pricing-tooltip">
-                                              <i class="fa fa-usd"></i><strong>Rate:</strong> ${{ offer.rate_kwh }}/kwh <sup><i class="fa fa-question-circle-o"></i></sup>
-                                              <span class="tooltip-text">
-                                                The rate represents the cost of energy per kwh (<a href="https://en.wikipedia.org/wiki/Kilowatt_hour" target="_blank" rel="nofollow">Kilowatt Hour</a>) used.
-                                              </span>
-                                            </div>
-                                          </li>
+                                        {% if not offer.has_cancellation_fee %}
+                                          <li><i class="fa fa-check"></i><strong>No</strong> Cancellation Fee</li>
+                                        {% endif %}
+                                        <li><i class="fa fa-bolt"></i><strong>Utility:</strong> {{ offer.utility_name }}</li>
+                                        <li>
+                                          <div class="pricing-tooltip">
+                                            <i class="fa fa-usd"></i><strong>Rate:</strong> {% calculate_rate_in_cents offer.rate_kwh %}¢/kWh <sup><i class="fa fa-question-circle-o"></i></sup>
+                                            <span class="tooltip-text">
+                                              The rate represents the cost of energy per kwh (<a href="https://en.wikipedia.org/wiki/Kilowatt_hour" target="_blank" rel="nofollow">Kilowatt Hour</a>) used.
+                                            </span>
+                                          </div>
+                                        </li>
                                       </ul>
                                   </div>
                               </div>
