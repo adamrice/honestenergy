@@ -20,13 +20,26 @@ def calculate_monthly_cost(rate):
 
 
 @register.simple_tag
+def calculate_rate_in_cents(rate):
+    """
+    This template tag computes the rate in cents.
+
+    :param rate: float, the cost of energy / kwh
+    :returns: str, formatted cost in cents
+    """
+    return '{0:.1f}'.format(
+        rate * 100
+    )
+
+
+@register.simple_tag
 def column_class_selector(index_, length):
     """
     This expects a column class selector in the format `[N]u 12u$([size])`
     Where `N` is a column number and size is the size of the screen using
     skel breakpoint selectors as seen here: https://github.com/ajlkn/skel/blob/master/docs/skel-layout.md#usage
 
-    This tag should be used when looping through elements to render in HTML.
+    This tag should be used when looping through elements to render in HTML columns.
     The method parses the class and, depending on the lenght of the list,
     will assign a class.
 
